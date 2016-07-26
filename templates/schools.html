@@ -1,0 +1,9 @@
+<html>
+<div>
+<ul>
+{% for school in list|dictsort(school) %}
+	<li><a href="schools/{{ school[0] }}">{{ school[0] }}</a></li>
+{% endfor %}
+</ul>
+</div>
+</html>

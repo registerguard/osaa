@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="http://uploads.registerguard.com/uploads/spec-css/spec-styles.css">
+
+<!-- wrapper -->
+<div class="spec-wrapper" style="padding: 10px 0">
+	
+	<div class="spec-story">
+		
+		{% for school in schools %}
+			
+			<label class="collapse plus" id="label{{ loop.index }}" for="input{{ loop.index }}" onclick="tog({{ loop.index }})">
+				<div class="spec-bar">
+					<div class="spec-bar-left">{{ school.name }}</div>
+					<div class="spec-bar-right">&nbsp;</div>
+				</div>
+			</label>
+			
+			<input id="input{{ loop.index }}" type="checkbox"> 
+			
+			<div>
+			
+				<table>
+					
+					...
+					
+				</table>
+				
+			</div>
+			
+		{% endfor %}
+	
+	</div><!-- /.spec-story -->
+	
+</div><!-- /.spec-wrapper -->
+
+<script>
+	function tog(id){
+		labelid = "label" + id;
+		label = document.getElementById(labelid);
+		inputid = "input" + id;
+		input = document.getElementById(inputid);
+		if(input.checked){
+			console.log(id + ': closed');
+			// plus is fine: \f067
+			label.classList.remove('times');
+			label.classList.add('plus');
+		} else {
+			console.log(id + ': open');
+			// change plus to \f00d
+			label.classList.remove('plus');
+			label.classList.add('times');
+		}
+	}
+</script>
