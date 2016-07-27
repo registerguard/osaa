@@ -3,3 +3,4 @@ quickstart.py
 client_secret.json
 *.csv
 *.tsv
+*.pyc

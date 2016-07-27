@@ -2,7 +2,7 @@
 <div>
 <ul>
 {% for school in list|dictsort(school) %}
-	<li><a href="schools/{{ school[0] }}">{{ school[0] }}</a></li>
+	<li><a href="{{ school[0] }}">{{ school[0] }}</a></li>
 {% endfor %}
 </ul>
 </div>
